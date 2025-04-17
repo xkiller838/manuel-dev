@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador de Software</title>
+    <script src="./js/tailwindcss_3.4.16.js"></script>
+    <script src="./js/tailwindcss_config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="./fonts/font_family.css" rel="stylesheet">
+    <link href="./fonts/font_size.css" rel="stylesheet">
+    <link href="./fonts/RemixIcon/fonts/remixicon.css" rel="stylesheet">
+    <script src="./js/echarts.min.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./img/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+    </style>
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50" aria-label="Volver arriba">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+     <!-- Navigation -->
+     <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 stroke-blue-500">
+                    <polyline points="30,20 10,50 30,80" stroke-width="12" stroke-linecap="square" fill="none" />
+                    <line x1="45" y1="20" x2="55" y2="80" stroke-width="12" stroke-linecap="square" />
+                    <polyline points="70,20 90,50 70,80" stroke-width="12" stroke-linecap="square" fill="none" />
+                </svg>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors">Sobre Mí</a>
+                <a href="#habilidades" class="text-gray-700 hover:text-primary transition-colors">Habilidades</a>
+                <a href="#proyectos" class="text-gray-700 hover:text-primary transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+                
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <button class="md:hidden w-10 h-10 flex items-center justify-center" id="menu-toggle" aria-label="Menú">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white w-full absolute left-0 top-full shadow-md hidden" id="mobile-menu">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors">Sobre Mí</a>
+                <a href="#habilidades" class="text-gray-700 hover:text-primary transition-colors">Habilidades</a>
+                <a href="#proyectos" class="text-gray-700 hover:text-primary transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+                
+                <div class="flex items-center">
+                    <span class="mr-3 text-sm text-gray-700">Tema Oscuro</span>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="mobile-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-28 pb-20 relative overflow-hidden">
+        <div class="particles" id="particles"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 typing-effect">Jesus Manuel Parada L.</h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Desarrollador Full Stack</h2>
+                    <p class="text-gray-700 mb-8 max-w-lg">Especialista en desarrollo web y móvil con más de 5 años de experiencia creando soluciones digitales innovadoras y de alto rendimiento.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#contacto" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">Contáctame</a>
+                        <a href="#proyectos" class="border border-primary text-primary px-6 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">Ver Proyectos</a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center fade-in" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="./img/mi_foto/1617643836513.jpg" alt="Carlos Rodríguez" class="w-full h-full object-cover object-top">
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+                                <i class="ri-code-s-slash-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="sobre-mi" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-4">Sobre Mí</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 fade-in">
+                    <img src="./img/espacio_de_trabajo/002e2caa07b6a4980b221ebca0130c6c.jpg" alt="Espacio de trabajo" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0 fade-in" style="animation-delay: 0.3s;">
+                    <h3 class="text-2xl font-bold mb-4">¿Quién soy?</h3>
+                    <p class="text-gray-700 mb-4">Soy un desarrollador full stack apasionado por crear experiencias digitales excepcionales. Me especializo en el desarrollo de aplicaciones web y móviles utilizando tecnologías modernas.</p>
+                    <p class="text-gray-700 mb-6">Con experiencia en startups y empresas establecidas, he contribuido al desarrollo de productos utilizados por miles de usuarios. Me encanta resolver problemas complejos y convertir ideas en realidad.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div>
+                            <p class="font-medium">Nombre:</p>
+                            <p class="text-gray-700">Jesus Manuel Parada L.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Email:</p>
+                            <p class="text-gray-700">digitalexpertsdev12@gmail.com</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Ubicación:</p>
+                            <p class="text-gray-700">Colombia, Norte de Santander</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Disponibilidad:</p>
+                            <p class="text-gray-700">Freelance / Contrato</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-4">Mis Habilidades</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Domino diversas tecnologías para el desarrollo web y móvil, siempre manteniéndome actualizado con las últimas tendencias.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-layout-line text-blue-600 ri-2x"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Vue.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">TailwindCSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Bootstrap</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-server-line text-green-600 ri-2x"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Backend</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Node.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Laravel</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">MySQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">PostgreSQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Skills -->
+                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.3s;">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-smartphone-line text-purple-600 ri-2x"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Desarrollo Móvil</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Ionic</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">React Native</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="30%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Flutter</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="30%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">PWA</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Chart -->
+            <div class="mt-16 bg-white rounded-lg shadow-md p-6 fade-in">
+                <h3 class="text-xl font-bold mb-6">Comparativa de Habilidades</h3>
+                <div id="skills-chart" class="w-full h-80"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-4">Mis Proyectos</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Una selección de los proyectos más destacados en los que he trabajado recientemente.</p>
+            </div>
+            
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <button class="filter-button px-6 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors active whitespace-nowrap" data-filter="all">Todos</button>
+                <button class="filter-button px-6 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors whitespace-nowrap" data-filter="web">Web</button>
+                <button class="filter-button px-6 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors whitespace-nowrap" data-filter="mobile">Móvil</button>
+                <button class="filter-button px-6 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors whitespace-nowrap" data-filter="backend">Backend</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="web" style="animation-delay: 0.1s;">
+                    <div class="relative">
+                        <img src="./img/e-commerce/d4263d32fdba538133a166e795cbf9ee.jpg" alt="E-commerce Platform" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Plataforma E-commerce</h4>
+                            <p class="text-center mb-4">Tienda online completa con pasarela de pagos y gestión de inventario.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project1">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Plataforma E-commerce</h4>
+                        <p class="text-gray-600 mb-4">Vue.js, Node.js, MongoDB</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="mobile" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <img src="./img/fitness/343c3b87d2d4725fd5f64e385543af6a.jpg" alt="Fitness App" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Aplicación de Fitness</h4>
+                            <p class="text-center mb-4">App móvil para seguimiento de entrenamientos y nutrición.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project2">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Aplicación de Fitness</h4>
+                        <p class="text-gray-600 mb-4">Ionic, Firebase, Chart.js</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Ionic</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <img src="./img/sistema_de _gestión_de_apis/151d436c4b325d3a82585487bd81ee16.jpg" alt="API Management System" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Sistema de Gestión de APIs</h4>
+                            <p class="text-center mb-4">Plataforma para gestionar y monitorizar APIs RESTful.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project3">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Sistema de Gestión de APIs</h4>
+                        <p class="text-gray-600 mb-4">Laravel, PostgreSQL, Redis</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="web" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <img src="./img/plataforma_inmobiliaria/92bb7ff0ba88c495a82b73c7e4f8b0ec.jpg" alt="Real Estate Platform" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Plataforma Inmobiliaria</h4>
+                            <p class="text-center mb-4">Portal web para búsqueda y gestión de propiedades inmobiliarias.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project4">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Plataforma Inmobiliaria</h4>
+                        <p class="text-gray-600 mb-4">Vue.js, TailwindCSS, Node.js</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
+                            <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-medium">TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="mobile" style="animation-delay: 0.5s;">
+                    <div class="relative">
+                        <img src="./img/app_de_entrega_de_Comida/f2f165de9533d3117ed19cec9b6c7768.jpg" alt="Food Delivery App" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">App de Entrega de Comida</h4>
+                            <p class="text-center mb-4">Aplicación móvil para pedidos y entregas de comida a domicilio.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project5">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">App de Entrega de Comida</h4>
+                        <p class="text-gray-600 mb-4">Ionic, Vue.js, Firebase</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Ionic</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.6s;">
+                    <div class="relative">
+                        <img src="./img/sistema_de_gestión_de_contenidos/609a63cc2250e69e1a9067c27c6e27d8.jpg" alt="CMS System" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Sistema de Gestión de Contenidos</h4>
+                            <p class="text-center mb-4">CMS personalizado para la gestión de contenidos digitales.</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project6">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Sistema de Gestión de Contenidos</h4>
+                        <p class="text-gray-600 mb-4">Laravel, MySQL, Bootstrap</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 7 -->
+                 <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.6s;">
+                    <div class="relative">
+                        <img src="./img/plataforma_lms/0d6bf3baf2d4bc9e39a2756dff8341f5.jpg" alt="Plataforma LMS" class="w-full h-64 object-cover object-top">
+                        
+                        <div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex flex-col justify-center items-center p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Plataforma LMS</h4>
+                            <p class="text-center mb-4">Sistema de gestión de aprendizaje para cursos online con videoconferencias, evaluaciones y certificaciones</p>
+                            <button class="px-6 py-2 bg-white text-primary rounded-button font-medium hover:bg-gray-100 transition-colors project-details-btn whitespace-nowrap" data-project="project7">Ver Detalles</button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Plataforma LMS</h4>
+                        <p class="text-gray-600 mb-4">Node, TailwindCSS, Vue</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Node</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">TailwindCSS</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Vue</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12 fade-in">
+                <button class="bg-white border border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap" id="load-more-btn">
+                    Cargar Más Proyectos
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-4">Contáctame</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para trabajos freelance y oportunidades a tiempo completo.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 fade-in">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-map-pin-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Ubicación</h4>
+                                    <p class="text-gray-700">Colombia, Norte de Santander</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-mail-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <p class="text-gray-700">digitalexpertsdev12@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-phone-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Teléfono</h4>
+                                    <p class="text-gray-700">+37-</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-time-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Horario de Trabajo</h4>
+                                    <p class="text-gray-700">Lun - Vie: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Sígueme en</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/jesus.parada.121772/" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center social-icon" aria-label="Facebook">
+                                    <i class="ri-facebook-fill text-blue-600"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center social-icon" aria-label="Instagram">
+                                    <i class="ri-instagram-line text-pink-600"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/manuel-parada-268a41172/" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center social-icon" aria-label="LinkedIn">
+                                    <i class="ri-linkedin-fill text-blue-700"></i>
+                                </a>
+                                <a href="https://github.com/xkiller838" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center social-icon" aria-label="GitHub">
+                                    <i class="ri-github-fill text-gray-700"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-2/3 fade-in" style="animation-delay: 0.3s;">
+                    <div class="bg-white rounded-lg shadow-md p-5">
+                        <h3 class="text-2xl font-bold mb-6">Envíame un Mensaje</h3>
+                        
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Nombre</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu nombre" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 mb-2">Asunto</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Asunto del mensaje" required>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Mensaje</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu mensaje" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 stroke-blue-500">
+                            <polyline points="30,20 10,50 30,80" stroke-width="12" stroke-linecap="square" fill="none" />
+                            <line x1="45" y1="20" x2="55" y2="80" stroke-width="12" stroke-linecap="square" />
+                            <polyline points="70,20 90,50 70,80" stroke-width="12" stroke-linecap="square" fill="none" />
+                        </svg>
+                    </a>
+                    <p class="text-gray-400 max-w-md">Desarrollador full stack especializado en crear experiencias digitales excepcionales y soluciones tecnológicas innovadoras.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                            <li><a href="#sobre-mi" class="text-gray-400 hover:text-white transition-colors">Sobre Mí</a></li>
+                            <li><a href="#habilidades" class="text-gray-400 hover:text-white transition-colors">Habilidades</a></li>
+                            <li><a href="#proyectos" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li>
+                            <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Sígueme</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/jesus.parada.121772/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/manuel-parada-268a41172/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://github.com/xkiller838" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" aria-label="GitHub">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-3 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">&copy; 2025 Jesus Manuel Parada L. Todos los derechos reservados.</p>
+                
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Project Modal -->
+    <div class="project-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="project-modal">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-2xl font-bold" id="modal-title">Detalles del Proyecto</h3>
+                <button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-700" id="close-modal" aria-label="Cerrar">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            
+            <div class="p-6" id="modal-content">
+                <!-- Content will be dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./js/personalized.js"></script>
+</html>
