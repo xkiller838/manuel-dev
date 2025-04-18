@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '9 meses',
             role: 'Desarrollador Backend',
-            image: './img/sistema_de _gestión_de_apis/ba62258b2178cb79889f2b87713df6ef.jpg'
+            image: './img/sistema_de _gestión_de_apis/151d436c4b325d3a82585487bd81ee16.jpg'
         },
         project4: {
             title: 'Plataforma Inmobiliaria',
