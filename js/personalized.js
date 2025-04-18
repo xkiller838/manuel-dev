@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '8 meses',
             role: 'Desarrollador Full Stack',
-            image: './img/app_de_entrega_de_comida/64806e6311878e662d2ff925c833edca.jpg'
+            image: './img/entrega_comidas_rapidas/64806e6311878e662d2ff925c833edca.jpg'
         },
         project6: {
             title: 'Sistema de Gestión de Contenidos',
