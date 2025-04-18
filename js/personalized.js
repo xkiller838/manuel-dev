@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '8 meses',
             role: 'Desarrollador Full Stack',
-            image: '../img/e-commerce/6cd6ecac30877cf5afd2bef3b842da9f.jpg'
+            image: './img/e-commerce/6cd6ecac30877cf5afd2bef3b842da9f.jpg'
         },
         project2: {
             title: 'Aplicación de Fitness',
