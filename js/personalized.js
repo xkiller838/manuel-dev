@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         <div>
                             <h4 class="text-xl font-bold mb-4">Descripción</h4>
-                            <p class="text-gray-700 mb-6">${project.description}</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-6">${project.description}</p>
                             
                             <div class="mb-6">
                                 <h4 class="text-xl font-bold mb-4">Tecnologías</h4>
@@ -327,11 +327,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <h5 class="font-medium mb-1">Duración</h5>
-                                    <p class="text-gray-700">${project.duration}</p>
+                                    <p class="text-gray-700 dark:text-gray-300">${project.duration}</p>
                                 </div>
                                 <div>
                                     <h5 class="font-medium mb-1">Rol</h5>
-                                    <p class="text-gray-700">${project.role}</p>
+                                    <p class="text-gray-700 dark:text-gray-300">${project.role}</p>
                                 </div>
                             </div>
                         </div>
@@ -426,4 +426,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         skillsChart.resize();
     });
+    
 });

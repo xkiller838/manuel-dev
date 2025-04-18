@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +16,11 @@
     <link href="./img/favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
+        .dark {color-scheme: dark;}
     </style>
     
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900">
     <!-- Loader -->
     <div class="loader">
         <div class="loader-spinner"></div>
@@ -34,7 +35,7 @@
     </button>
 
      <!-- Navigation -->
-     <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50 py-4">
+     <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-50 py-3">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-['Pacifico'] text-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 stroke-blue-500">
@@ -45,16 +46,26 @@
             </a>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors">Inicio</a>
-                <a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors">Sobre Mí</a>
-                <a href="#habilidades" class="text-gray-700 hover:text-primary transition-colors">Habilidades</a>
-                <a href="#proyectos" class="text-gray-700 hover:text-primary transition-colors">Proyectos</a>
-                <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+                <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Sobre Mí</a>
+                <a href="#habilidades" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Habilidades</a>
+                <a href="#proyectos" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Contacto</a>
                 
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider"></span>
-                </label>
+                <button id="theme-toggle" data-theme-toggle class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none transition-colors">
+                    <!-- Icono de Sol (modo claro) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 block dark:hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <!-- Icono de Luna (modo oscuro) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-300 hidden dark:block" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
             </div>
             
             <button class="md:hidden w-10 h-10 flex items-center justify-center" id="menu-toggle" aria-label="Menú">
@@ -63,20 +74,31 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div class="md:hidden bg-white w-full absolute left-0 top-full shadow-md hidden" id="mobile-menu">
+        <div class="md:hidden bg-white dark:bg-gray-800 w-full absolute left-0 top-full shadow-md hidden" id="mobile-menu" data-mobile-menu>
             <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
-                <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors">Inicio</a>
-                <a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors">Sobre Mí</a>
-                <a href="#habilidades" class="text-gray-700 hover:text-primary transition-colors">Habilidades</a>
-                <a href="#proyectos" class="text-gray-700 hover:text-primary transition-colors">Proyectos</a>
-                <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+                <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Sobre Mí</a>
+                <a href="#habilidades" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Habilidades</a>
+                <a href="#proyectos" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Contacto</a>
                 
                 <div class="flex items-center">
-                    <span class="mr-3 text-sm text-gray-700">Tema Oscuro</span>
-                    <label class="theme-switch">
-                        <input type="checkbox" id="mobile-theme-toggle">
-                        <span class="slider"></span>
-                    </label>
+                    <span class="mr-3 text-sm text-gray-700 dark:text-gray-300">Cambiar tema</span>
+                    <button id="mobile-theme-toggle" data-theme-toggle
+                        class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none transition-colors">
+                        <!-- Icono de Sol (modo claro) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 block dark:hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Icono de Luna (modo oscuro) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-300 hidden dark:block" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -90,8 +112,8 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 fade-in order-last md:order-first mt-8 md:mt-0">
                     <h1 class="text-xl md:text-5xl font-bold mb-4 typing-effect">Jesus Manuel Parada L.</h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 text-sm md:text-base">Desarrollador Full Stack</h2>
-                    <p class="text-gray-700 mb-8 max-w-lg mx-auto text-sm md:text-base">Especialista en desarrollo web y móvil con más de 7 años de experiencia creando soluciones digitales innovadoras y de alto rendimiento.</p>
+                    <h2 class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary mb-6 text-sm md:text-base">Desarrollador Full Stack</h2>
+                    <p class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary mb-6 text-sm md:text-base">Especialista en desarrollo web y móvil con más de 7 años de experiencia creando soluciones digitales innovadoras y de alto rendimiento.</p>
                     
                     <div class="flex space-x-4">
                         <a href="#contacto" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">Contáctame</a>
@@ -101,11 +123,11 @@
                 
                 <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center fade-in order-first md:order-last" style="animation-delay: 0.3s;">
                     <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl dark:shadow-gray-800/50 transition-colors duration-300">
                             <img src="./img/mi_foto/1617643836513.jpg" alt="Carlos Rodríguez" class="w-full h-full object-cover object-top">
                         </div>
                         
-                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
+                        <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg dark:shadow-gray-800/50 transition-colors duration-300">
                             <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
                                 <i class="ri-code-s-slash-line ri-lg"></i>
                             </div>
@@ -117,7 +139,7 @@
     </section>
     
     <!-- About Me Section -->
-    <section id="sobre-mi" class="py-20 bg-white">
+    <section id="sobre-mi" class="py-20 bg-white dark:bg-gray-800 border border-transparent dark:border-gray-700">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-2xl font-bold mb-4">Sobre Mí</h2>
@@ -131,25 +153,25 @@
                 
                 <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0 fade-in" style="animation-delay: 0.3s;">
                     <h3 class="text-xl font-bold mb-4">¿Quién soy?</h3>
-                    <p class="text-gray-700 mb-4 text-sm md:text-base">Soy un desarrollador full stack apasionado por crear experiencias digitales excepcionales. Me especializo en el desarrollo de aplicaciones web y móviles utilizando tecnologías modernas.</p>
-                    <p class="text-gray-700 mb-6 text-sm md:text-base">Con experiencia en startups y empresas establecidas, he contribuido al desarrollo de productos utilizados por miles de usuarios. Me encanta resolver problemas complejos y convertir ideas en realidad.</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">Soy un desarrollador full stack apasionado por crear experiencias digitales excepcionales. Me especializo en el desarrollo de aplicaciones web y móviles utilizando tecnologías modernas.</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 text-sm md:text-base">Con experiencia en startups y empresas establecidas, he contribuido al desarrollo de productos utilizados por miles de usuarios. Me encanta resolver problemas complejos y convertir ideas en realidad.</p>
                     
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div>
                             <p class="font-medium">Nombre:</p>
-                            <p class="text-gray-700 text-sm md:text-base break-words">Jesus Manuel Parada L.</p>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base break-words">Jesus Manuel Parada L.</p>
                         </div>
                         <div>
                             <p class="font-medium">Email:</p>
-                            <p class="text-gray-700 text-sm md:text-base break-words">digitalexpertsdev12@gmail.com</p>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base break-words">digitalexpertsdev12@gmail.com</p>
                         </div>
                         <div>
                             <p class="font-medium">Ubicación:</p>
-                            <p class="text-gray-700 text-sm md:text-base break-words">Colombia, Norte de Santander</p>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base break-words">Colombia, Norte de Santander</p>
                         </div>
                         <div>
                             <p class="font-medium">Disponibilidad:</p>
-                            <p class="text-gray-700 text-sm md:text-base break-words">Freelance / Contrato</p>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base break-words">Freelance / Contrato</p>
                         </div>
                     </div>
                 </div>
@@ -158,17 +180,17 @@
     </section>
     
     <!-- Skills Section -->
-    <section id="habilidades" class="py-8 bg-gray-50">
+    <section id="habilidades" class="py-8 bg-gray-50 dark:bg-gray-800 border border-transparent dark:border-gray-700 border border-transparent dark:border-gray-600">
         <div class="container mx-auto px-6">
             <div class="text-center mb-10 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Mis Habilidades</h2>
+                <h2 class="text-2xl dark:text-gray-300 font-bold mb-4">Mis Habilidades</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Domino diversas tecnologías para el desarrollo web y móvil, siempre manteniéndome actualizado con las últimas tendencias.</p>
+                <p class="text-gray-700 dark:text-gray-300 mt-4 max-w-2xl mx-auto">Domino diversas tecnologías para el desarrollo web y móvil, siempre manteniéndome actualizado con las últimas tendencias.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Frontend Skills -->
-                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.1s;">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 skill-card fade-in border border-transparent dark:border-gray-600" style="animation-delay: 0.1s;">
                     <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="ri-layout-line text-blue-600 ri-2x"></i>
                     </div>
@@ -219,7 +241,7 @@
                 </div>
                 
                 <!-- Backend Skills -->
-                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.2s;">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 skill-card fade-in border border-transparent dark:border-gray-600" style="animation-delay: 0.2s;">
                     <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="ri-server-line text-green-600 ri-2x"></i>
                     </div>
@@ -270,7 +292,7 @@
                 </div>
                 
                 <!-- Mobile Skills -->
-                <div class="bg-white rounded-lg shadow-md p-6 skill-card fade-in" style="animation-delay: 0.3s;">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 skill-card fade-in border border-transparent dark:border-gray-600" style="animation-delay: 0.3s;">
                     <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="ri-smartphone-line text-purple-600 ri-2x"></i>
                     </div>
@@ -322,7 +344,7 @@
             </div>
             
             <!-- Skills Chart -->
-            <div class="mt-16 bg-white rounded-lg shadow-md p-6 fade-in">
+            <div class="mt-16 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg shadow-md p-6 fade-in border border-transparent dark:border-gray-600">
                 <h3 class="text-xl font-bold mb-6">Comparativa de Habilidades</h3>
                 <div id="skills-chart" class="w-full h-80"></div>
             </div>
@@ -330,12 +352,12 @@
     </section>
     
     <!-- Projects Section -->
-    <section id="proyectos" class="py-8 bg-white">
+    <section id="proyectos" class="py-8 bg-white dark:bg-gray-800 border border-transparent dark:border-gray-600">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8 fade-in">
                 <h2 class="text-2xl font-bold mb-4">Mis Proyectos</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Una selección de los proyectos más destacados en los que he trabajado recientemente.</p>
+                <p class="text-gray-700 dark:text-gray-300 mt-4 max-w-2xl mx-auto">Una selección de los proyectos más destacados en los que he trabajado recientemente.</p>
             </div>
             
             <!-- Project Filters -->
@@ -349,7 +371,7 @@
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="web" style="animation-delay: 0.1s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="web" style="animation-delay: 0.1s;">
                     <div class="relative">
                         <img src="./img/e-commerce/d4263d32fdba538133a166e795cbf9ee.jpg" alt="E-commerce Platform" class="w-full h-64 object-cover object-top">
                         
@@ -362,7 +384,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Plataforma E-commerce</h4>
-                        <p class="text-gray-600 mb-4">Vue.js, Node.js, MongoDB</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Vue.js, Node.js, MongoDB</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
                             <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Node.js</span>
@@ -371,7 +393,7 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="mobile" style="animation-delay: 0.2s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="mobile" style="animation-delay: 0.2s;">
                     <div class="relative">
                         <img src="./img/fitness/343c3b87d2d4725fd5f64e385543af6a.jpg" alt="Fitness App" class="w-full h-64 object-cover object-top">
                         
@@ -384,7 +406,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Aplicación de Fitness</h4>
-                        <p class="text-gray-600 mb-4">Ionic, Firebase, Chart.js</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Ionic, Firebase, Chart.js</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Ionic</span>
                             <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Firebase</span>
@@ -393,7 +415,7 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.3s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="backend" style="animation-delay: 0.3s;">
                     <div class="relative">
                         <img src="./img/sistema_de _gestión_de_apis/151d436c4b325d3a82585487bd81ee16.jpg" alt="API Management System" class="w-full h-64 object-cover object-top">
                         
@@ -406,7 +428,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Sistema de Gestión de APIs</h4>
-                        <p class="text-gray-600 mb-4">Laravel, PostgreSQL, Redis</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Laravel, PostgreSQL, Redis</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Laravel</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">PostgreSQL</span>
@@ -415,7 +437,7 @@
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="web" style="animation-delay: 0.4s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="web" style="animation-delay: 0.4s;">
                     <div class="relative">
                         <img src="./img/plataforma_inmobiliaria/92bb7ff0ba88c495a82b73c7e4f8b0ec.jpg" alt="Real Estate Platform" class="w-full h-64 object-cover object-top">
                         
@@ -428,7 +450,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Plataforma Inmobiliaria</h4>
-                        <p class="text-gray-600 mb-4">Vue.js, TailwindCSS, Node.js</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Vue.js, TailwindCSS, Node.js</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
                             <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-medium">TailwindCSS</span>
@@ -437,7 +459,7 @@
                 </div>
                 
                 <!-- Project 5 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="mobile" style="animation-delay: 0.5s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="mobile" style="animation-delay: 0.5s;">
                     <div class="relative">
                         <img src="./img/entrega_comidas_rapidas/f2f165de9533d3117ed19cec9b6c7768.jpg" alt="Food Delivery App" class="w-full h-64 object-cover object-top">
                         
@@ -450,7 +472,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">App de Entrega de Comida</h4>
-                        <p class="text-gray-600 mb-4">Ionic, Vue.js, Firebase</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Ionic, Vue.js, Firebase</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Ionic</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Vue.js</span>
@@ -459,7 +481,7 @@
                 </div>
                 
                 <!-- Project 6 -->
-                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.6s;">
+                <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="backend" style="animation-delay: 0.6s;">
                     <div class="relative">
                         <img src="./img/sistema_de_gestión_de_contenidos/609a63cc2250e69e1a9067c27c6e27d8.jpg" alt="CMS System" class="w-full h-64 object-cover object-top">
                         
@@ -472,7 +494,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Sistema de Gestión de Contenidos</h4>
-                        <p class="text-gray-600 mb-4">Laravel, MySQL, Bootstrap</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Laravel, MySQL, Bootstrap</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Laravel</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">MySQL</span>
@@ -481,7 +503,7 @@
                 </div>
 
                  <!-- Project 7 -->
-                 <div class="project-card rounded-lg overflow-hidden shadow-md fade-in" data-category="backend" style="animation-delay: 0.6s;">
+                 <div class="project-card rounded-lg overflow-hidden shadow-md fade-in border border-transparent dark:border-gray-600" data-category="backend" style="animation-delay: 0.6s;">
                     <div class="relative">
                         <img src="./img/plataforma_lms/0d6bf3baf2d4bc9e39a2756dff8341f5.jpg" alt="Plataforma LMS" class="w-full h-64 object-cover object-top">
                         
@@ -494,7 +516,7 @@
                     
                     <div class="p-6">
                         <h4 class="text-md text-sm md:text-base font-bold mb-2">Plataforma LMS</h4>
-                        <p class="text-gray-600 mb-4">Node, TailwindCSS, Vue</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Node, TailwindCSS, Vue</p>
                         <div class="flex space-x-2">
                             <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Node</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">TailwindCSS</span>
@@ -506,7 +528,11 @@
             
             <!-- Load More Button -->
             <div class="text-center mt-12 fade-in">
-                <button class="bg-white border border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap" id="load-more-btn">
+                <button class="bg-white text-primary border-2 border-primary px-8 py-3 rounded-button font-medium 
+                                hover:bg-primary hover:text-white 
+                                dark:bg-gray-800 dark:border-secondary dark:text-secondary 
+                                dark:hover:bg-secondary dark:hover:text-white 
+                                transition-colors duration-300 whitespace-nowrap" id="load-more-btn">
                     Cargar Más Proyectos
                 </button>
             </div>
@@ -514,18 +540,18 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contacto" class="py-8 bg-gray-50">
+    <section id="contacto" class="py-8 bg-gray-50 dark:bg-gray-800 border border-transparent dark:border-gray-600">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8 fade-in">
                 <h2 class="text-2xl font-bold mb-4">Contáctame</h2>
                 <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para trabajos freelance y oportunidades a tiempo completo.</p>
+                <p class="text-gray-700 dark:text-gray-300 mt-4 max-w-2xl mx-auto">¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para trabajos freelance y oportunidades a tiempo completo.</p>
             </div>
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Contact Info -->
-                <div class="lg:w-1/3 fade-in">
-                    <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="lg:w-1/3 fade-in border border-transparent dark:border-gray-600">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
                         <h3 class="text-md font-bold mb-6">Información de Contacto</h3>
                         
                         <div class="space-y-6">
@@ -535,7 +561,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Ubicación</h4>
-                                    <p class="text-gray-700 text-sm md:text-base">Colombia, Norte de Santander</p>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Colombia, Norte de Santander</p>
                                 </div>
                             </div>
                             
@@ -545,7 +571,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1 p-2">Email</h4>
-                                    <p class="text-gray-700 text-sm md:text-base break-words">digitalexpertsdev12@gmail.com</p>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base break-words">digitalexpertsdev12@gmail.com</p>
                                 </div>
                             </div>
                             
@@ -555,7 +581,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Teléfono</h4>
-                                    <p class="text-gray-700 text-sm md:text-base">+37-</p>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">+37-</p>
                                 </div>
                             </div>
                             
@@ -565,7 +591,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Horario de Trabajo</h4>
-                                    <p class="text-gray-700 text-sm md:text-base">Lun - Vie: 9:00 - 18:00</p>
+                                    <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Lun - Vie: 9:00 - 18:00</p>
                                 </div>
                             </div>
                         </div>
@@ -592,31 +618,31 @@
                 </div>
                 
                 <!-- Contact Form -->
-                <div class="lg:w-2/3 fade-in" style="animation-delay: 0.3s;">
-                    <div class="bg-white rounded-lg shadow-md p-5">
+                <div class="lg:w-2/3 fade-in border border-transparent dark:border-gray-600" style="animation-delay: 0.3s;">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5">
                         <h3 class="text-md font-bold mb-6">Envíame un Mensaje</h3>
                         
                         <form id="contact-form">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
-                                    <label for="name" class="block text-gray-700 mb-2">Nombre</label>
-                                    <input type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu nombre" required>
+                                    <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Nombre</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder="Tu nombre" required>
                                 </div>
                                 
                                 <div>
-                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
-                                    <input type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu email" required>
+                                    <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border text-black dark:bg-white focus:border-primary focus:ring-0 text-sm" placeholder="Tu email" required>
                                 </div>
                             </div>
                             
                             <div class="mb-6">
-                                <label for="subject" class="block text-gray-700 mb-2">Asunto</label>
-                                <input type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Asunto del mensaje" required>
+                                <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Asunto</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder="Asunto del mensaje" required>
                             </div>
                             
                             <div class="mb-6">
-                                <label for="message" class="block text-gray-700 mb-2">Mensaje</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring-0 text-sm" placeholder="Tu mensaje" required></textarea>
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Mensaje</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm resize-none" placeholder="Tu mensaje" required></textarea>
                             </div>
                             
                             <button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">
@@ -631,7 +657,7 @@
     </section>
     
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6">
+    <footer class="bg-gray-900 dark:bg-gray-800 text-white py-6 border border-transparent dark:border-gray-600">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-8 md:mb-0">
@@ -690,15 +716,15 @@
     
     <!-- Project Modal -->
     <div class="project-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="project-modal">
-        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
             <div class="p-6 pl-2 border-b border-gray-200 flex justify-between items-center">
-                <h3 class="text-md md:text-xl font-bold" id="modal-title">Detalles del Proyecto</h3>
-                <button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-700" id="close-modal" aria-label="Cerrar">
+                <h3 class="text-md text-gray-700 dark:text-gray-300 md:text-xl font-bold" id="modal-title">Detalles del Proyecto</h3>
+                <button class="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-300 hover:text-gray-700" id="close-modal" aria-label="Cerrar">
                     <i class="ri-close-line ri-lg"></i>
                 </button>
             </div>
             
-            <div class="p-6" id="modal-content">
+            <div class="p-6 text-gray-700 dark:text-gray-300" id="modal-content">
                 <!-- Content will be dynamically populated -->
             </div>
         </div>
@@ -706,4 +732,5 @@
 
 </body>
 <script src="./js/personalized.js"></script>
+<script src="./js/menuToggle.js"></script>
 </html>
