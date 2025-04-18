@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '1 año',
             role: 'Desarrollador Mobile',
-            image: '../img/fitness/cc11c0ddd0191c3d4384bdb40fc0e112.jpg'
+            image: './img/fitness/cc11c0ddd0191c3d4384bdb40fc0e112.jpg'
         },
         project3: {
             title: 'Sistema de Gestión de APIs',
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '9 meses',
             role: 'Desarrollador Backend',
-            image: '../img/sistema_de _gestión_de_apis/ba62258b2178cb79889f2b87713df6ef.jpg'
+            image: './img/sistema_de _gestión_de_apis/ba62258b2178cb79889f2b87713df6ef.jpg'
         },
         project4: {
             title: 'Plataforma Inmobiliaria',
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '3 meses',
             role: 'Desarrollador Frontend',
-            image: '../img/plataforma_inmobiliaria/c7a03a62f65b50a004d701aea68ccd3a.jpg'
+            image: './img/plataforma_inmobiliaria/c7a03a62f65b50a004d701aea68ccd3a.jpg'
         },
         project5: {
             title: 'App de Entrega de Comida',
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '8 meses',
             role: 'Desarrollador Full Stack',
-            image: '../img/app_de_entrega_de_comida/64806e6311878e662d2ff925c833edca.jpg'
+            image: './img/app_de_entrega_de_comida/64806e6311878e662d2ff925c833edca.jpg'
         },
         project6: {
             title: 'Sistema de Gestión de Contenidos',
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '5 meses',
             role: 'Desarrollador Backend',
-            image: '../img/sistema_de_gestión_de_contenidos/609a63cc2250e69e1a9067c27c6e27d8.jpg'
+            image: './img/sistema_de_gestión_de_contenidos/609a63cc2250e69e1a9067c27c6e27d8.jpg'
         },
         project7: {
             title: 'Plataforma LMS',
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '1 año y 4 meses',
             role: 'Desarrollador Full Stack',
-            image: '../img/plataforma_lms/0d6bf3baf2d4bc9e39a2756dff8341f5.jpg'
+            image: './img/plataforma_lms/0d6bf3baf2d4bc9e39a2756dff8341f5.jpg'
         }
     };
     
