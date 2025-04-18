@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             duration: '1 año',
             role: 'Desarrollador Mobile',
-            image: './img/fitness/cc11c0ddd0191c3d4384bdb40fc0e112.jpg'
+            image: './img/fitness/343c3b87d2d4725fd5f64e385543af6a.jpg'
         },
         project3: {
             title: 'Sistema de Gestión de APIs',
