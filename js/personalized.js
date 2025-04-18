@@ -99,14 +99,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize skills chart
     const skillsChart = echarts.init(document.getElementById('skills-chart'));
     
-    const skillsOption = {
+    
+    const getChartOptions = (isDark) => ({
         animation: false,
         tooltip: {
             trigger: 'axis',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            textStyle: {
-                color: '#1f2937'
-            }
+            backgroundColor: isDark ? 'rgba(50, 50, 50, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+            textStyle: { color: isDark ? '#fff' : '#1f2937' }
         },
         radar: {
             indicator: [
@@ -119,32 +118,44 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             radius: '65%',
             splitNumber: 4,
-            axisName: {
-                color: '#1f2937'
+            axisName: { color: isDark ? '#fff' : '#1f2937' },
+            splitLine: { lineStyle: { color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)' } },
+            splitArea: {
+                areaStyle: {
+                    color: isDark 
+                        ? ['rgba(50, 50, 50, 0.3)', 'rgba(70, 70, 70, 0.3)'] 
+                        : ['rgba(250, 250, 250, 0.3)', 'rgba(200, 200, 200, 0.3)']
+                }
             }
         },
         series: [{
             name: 'Habilidades',
             type: 'radar',
-            data: [
-                {
-                    value: [90, 85, 85, 80, 85, 85],
-                    name: 'Nivel de Competencia',
-                    areaStyle: {
-                        color: 'rgba(87, 181, 231, 0.1)'
-                    },
-                    lineStyle: {
-                        color: 'rgba(87, 181, 231, 1)'
-                    },
-                    itemStyle: {
-                        color: 'rgba(87, 181, 231, 1)'
-                    }
-                }
-            ]
+            data: [{
+                value: [90, 85, 85, 80, 85, 85],
+                name: 'Nivel de Competencia',
+                areaStyle: { color: isDark ? 'rgba(99, 102, 241, 0.2)' : 'rgba(87, 181, 231, 0.1)' },
+                lineStyle: { color: isDark ? '#8b5cf6' : 'rgba(87, 181, 231, 1)' },
+                itemStyle: { color: isDark ? '#8b5cf6' : 'rgba(87, 181, 231, 1)' }
+            }]
         }]
-    };
-    
-    skillsChart.setOption(skillsOption);
+    });
+
+    // Chart initialization
+    const isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDarkMode) document.documentElement.classList.add('dark');
+    skillsChart.setOption(getChartOptions(isDarkMode));
+
+    // Theme observer
+    new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.attributeName === 'class') {
+                skillsChart.setOption(getChartOptions(document.documentElement.classList.contains('dark')));
+                skillsChart.resize();
+            }
+        });
+    }).observe(document.documentElement, { attributes: true });
     
     // Project filters
     const filterButtons = document.querySelectorAll('.filter-button');
@@ -425,6 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Resize chart on window resize
     window.addEventListener('resize', () => {
         skillsChart.resize();
+        skillsChart.setOption(getChartOptions(document.documentElement.classList.contains('dark')));
     });
     
 });
