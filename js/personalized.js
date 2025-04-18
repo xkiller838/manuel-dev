@@ -113,12 +113,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 { name: 'Vue.js', max: 100 },
                 { name: 'Node.js', max: 100 },
                 { name: 'Laravel', max: 100 },
-                { name: 'Ionic', max: 100 },
+                { name: 'Ionic-Vue', max: 100 },
+                { name: 'Tailwind CSS', max: 100 },
+                { name: 'Bootstrap', max: 100 },
+                { name: 'Angular', max: 100 },
+                { name: 'Nginx', max: 100 },
+                { name: 'PostgreSQL', max: 100 },
+                { name: 'MySQL', max: 100 },
+                { name: 'PHP', max: 100 },
                 { name: 'Databases', max: 100 }
             ],
             radius: '65%',
             splitNumber: 4,
-            axisName: { color: isDark ? '#fff' : '#1f2937' },
+            axisName: { 
+                color: isDark ? '#fff' : '#1f2937',
+                fontSize: 12  // Reducir tamaño para mejor ajuste
+            },
             splitLine: { lineStyle: { color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)' } },
             splitArea: {
                 areaStyle: {
@@ -132,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Habilidades',
             type: 'radar',
             data: [{
-                value: [90, 85, 85, 80, 85, 85],
+                value: [90, 85, 85, 80, 85, 95, 90, 80, 75, 85, 83, 85, 85],
                 name: 'Nivel de Competencia',
                 areaStyle: { color: isDark ? 'rgba(99, 102, 241, 0.2)' : 'rgba(87, 181, 231, 0.1)' },
                 lineStyle: { color: isDark ? '#8b5cf6' : 'rgba(87, 181, 231, 1)' },
