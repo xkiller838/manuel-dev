@@ -270,6 +270,61 @@ const translations = {
     'placeholder-contact-message': {
       'es': 'Tu mensaje',
       'en': 'Your message'
+    },
+     // Footer
+    'footer-description': {
+      'es': 'Desarrollador full stack especializado en crear experiencias digitales excepcionales y soluciones tecnológicas innovadoras.',
+      'en': 'Full stack developer specialized in creating exceptional digital experiences and innovative technological solutions.'
+    },
+    'footer-quick-links': {
+      'es': 'Enlaces Rápidos',
+      'en': 'Quick Links'
+    },
+    'footer-link-home': {
+      'es': 'Inicio',
+      'en': 'Home'
+    },
+    'footer-link-about': {
+      'es': 'Sobre Mí',
+      'en': 'About Me'
+    },
+    'footer-link-skills': {
+      'es': 'Habilidades',
+      'en': 'Skills'
+    },
+    'footer-link-projects': {
+      'es': 'Proyectos',
+      'en': 'Projects'
+    },
+    'footer-link-contact': {
+      'es': 'Contacto',
+      'en': 'Contact'
+    },
+    'footer-follow': {
+      'es': 'Sígueme',
+      'en': 'Follow Me'
+    },
+    'footer-copyright': {
+      'es': '&copy; 2025 Jesus Manuel Parada L. Todos los derechos reservados.',
+      'en': '&copy; 2025 Jesus Manuel Parada L. All rights reserved.'
+    },
+    'footer-privacy-policy': {
+      'es': 'Política de Privacidad',
+      'en': 'Privacy Policy'
+    },
+    'footer-terms': {
+      'es': 'Términos de Servicio',
+      'en': 'Terms of Service'
+    },
+
+    // Modal
+    'modal-title': {
+      'es': 'Detalles del Proyecto',
+      'en': 'Project Details'
+    },
+    'modal-close': {
+      'es': 'Cerrar',
+      'en': 'Close'
     }
 };
 

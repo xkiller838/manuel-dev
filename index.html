@@ -67,7 +67,7 @@
                     </svg>
                 </button>
 
-                <button class="p-2 bg-white dark:bg-gray-700" data-language-toggle>
+                <button class="p-2 bg-white dark:bg-gray-800" data-language-toggle>
                     <span data-language-text>ES</span>
                 </button>
             </div>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="flex items-center">
                     <span data-translate="nav-change-language" class="mr-3 text-sm text-gray-700 dark:text-gray-300">Cambiar idioma</span>
-                    <button class="p-2 bg-white dark:bg-gray-700 rounded-full" data-mobile-language-toggle>
+                    <button class="p-2 bg-white dark:bg-gray-800 rounded-full" data-mobile-language-toggle>
                         <span data-language-text>ES</span>
                     </button>
                 </div>
@@ -631,33 +631,33 @@
                 
                 <!-- Contact Form -->
                 <div class="lg:w-2/3 fade-in border border-transparent dark:border-gray-600" style="animation-delay: 0.3s;">
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
                         <h3 data-translate="form-contact-title" class="text-md font-bold mb-6">Envíame un Mensaje</h3>
                         
                         <form id="contact-form">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
                                 <div>
                                     <label data-translate="label-contact-name" for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Nombre</label>
-                                    <input data-translate="placeholder-contact-name" type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder=data-translate="placeholder-contact-name" required>
+                                    <input data-translate="placeholder-contact-name" type="text" id="name" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder="Tu nombre" required>
                                 </div>
                                 
                                 <div>
                                     <label data-translate="label-contact-email" for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Correo</label>
-                                    <input type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border text-black dark:bg-white focus:border-primary focus:ring-0 text-sm" placeholder="Tu email" required>
+                                    <input data-translate="placeholder-contact-email" type="email" id="email" class="w-full px-4 py-3 rounded border-gray-300 border text-black dark:bg-white focus:border-primary focus:ring-0 text-sm" placeholder="Tu email" required>
                                 </div>
                             </div>
                             
-                            <div class="mb-6">
-                                <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Asunto</label>
-                                <input type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder="Asunto del mensaje" required>
+                            <div class="mb-5">
+                                <label data-translate="label-contact-subject" for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Asunto</label>
+                                <input data-translate="placeholder-contact-subject" type="text" id="subject" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm" placeholder="Asunto del mensaje" required>
                             </div>
                             
-                            <div class="mb-6">
-                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Mensaje</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm resize-none" placeholder="Tu mensaje" required></textarea>
+                            <div class="mb-5">
+                                <label data-translate="label-contact-message" for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Mensaje</label>
+                                <textarea data-translate="placeholder-contact-message" id="message" rows="3" class="w-full px-4 py-3 rounded border-gray-300 text-black dark:bg-white border focus:border-primary focus:ring-0 text-sm resize-none" placeholder="Tu mensaje" required></textarea>
                             </div>
                             
-                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">
+                            <button data-translate="button-contact-send" type="submit" class="bg-primary text-white px-4 py-3 rounded-button font-medium hover:bg-indigo-600 transition-colors whitespace-nowrap">
                                 Enviar Mensaje
                             </button>
                         </form>
@@ -680,23 +680,23 @@
                             <polyline points="70,20 90,50 70,80" stroke-width="12" stroke-linecap="square" fill="none" />
                         </svg>
                     </a>
-                    <p class="text-gray-400 max-w-md">Desarrollador full stack especializado en crear experiencias digitales excepcionales y soluciones tecnológicas innovadoras.</p>
+                    <p data-translate="footer-description" class="text-gray-400 max-w-md">Desarrollador full stack especializado en crear experiencias digitales excepcionales y soluciones tecnológicas innovadoras.</p>
                 </div>
                 
                 <div class="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0">
                     <div>
-                        <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                        <h4 data-translate="footer-quick-links" class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
                         <ul class="space-y-2">
-                            <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
-                            <li><a href="#sobre-mi" class="text-gray-400 hover:text-white transition-colors">Sobre Mí</a></li>
-                            <li><a href="#habilidades" class="text-gray-400 hover:text-white transition-colors">Habilidades</a></li>
-                            <li><a href="#proyectos" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li>
-                            <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                            <li><a data-translate="footer-link-home" href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                            <li><a data-translate="footer-link-about" href="#sobre-mi" class="text-gray-400 hover:text-white transition-colors">Sobre Mí</a></li>
+                            <li><a data-translate="footer-link-skills" href="#habilidades" class="text-gray-400 hover:text-white transition-colors">Habilidades</a></li>
+                            <li><a data-translate="footer-link-projects" href="#proyectos" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li>
+                            <li><a data-translate="footer-link-contact" href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h4 class="text-lg font-bold mb-4">Sígueme</h4>
+                        <h4 data-translate="footer-follow" class="text-lg font-bold mb-4">Sígueme</h4>
                         <div class="flex space-x-4">
                             <a href="https://www.facebook.com/jesus.parada.121772/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook">
                                 <i class="ri-facebook-fill"></i>
@@ -716,11 +716,11 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-3 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400">&copy; 2025 Jesus Manuel Parada L. Todos los derechos reservados.</p>
+                <p data-translate="footer-copyright" class="text-gray-400">&copy; 2025 Jesus Manuel Parada L. Todos los derechos reservados.</p>
                 
                 <div class="mt-4 md:mt-0 flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Términos de Servicio</a>
+                    <a data-translate="footer-privacy-policy" href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a>
+                    <a data-translate="footer-terms" href="#" class="text-gray-400 hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
             </div>
         </div>
@@ -730,7 +730,7 @@
     <div class="project-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="project-modal">
         <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
             <div class="p-6 pl-2 border-b border-gray-200 flex justify-between items-center">
-                <h3 class="text-md text-gray-700 dark:text-gray-300 md:text-xl font-bold" id="modal-title">Detalles del Proyecto</h3>
+                <h3 data-translate="modal-title" class="text-md text-gray-700 dark:text-gray-300 md:text-xl font-bold" id="modal-title">Detalles del Proyecto</h3>
                 <button class="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-300 hover:text-gray-700" id="close-modal" aria-label="Cerrar">
                     <i class="ri-close-line ri-lg"></i>
                 </button>
