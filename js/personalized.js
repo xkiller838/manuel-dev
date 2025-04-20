@@ -200,167 +200,182 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const projectDetails = {
         project1: {
-            title: 'Plataforma E-commerce',
-            description: 'Una plataforma de comercio electrónico completa con gestión de productos, carrito de compras, pasarela de pagos y panel de administración.',
+            titleKey: 'project1-title',
+            descriptionKey: 'project1-description',
             technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Express', 'Stripe API'],
-            features: [
-                'Catálogo de productos con filtros avanzados',
-                'Sistema de búsqueda en tiempo real',
-                'Carrito de compras con persistencia',
-                'Pasarela de pagos segura',
-                'Panel de administración para gestión de productos e inventario',
-                'Sistema de reseñas y valoraciones'
+            featureKeys: [
+                'project1-feature1',
+                'project1-feature2',
+                'project1-feature3',
+                'project1-feature4',
+                'project1-feature5',
+                'project1-feature6'
             ],
-            duration: '8 meses',
-            role: 'Desarrollador Full Stack',
+            durationKey: 'project1-duration',
+            roleKey: 'project1-role',
             image: './img/e-commerce/6cd6ecac30877cf5afd2bef3b842da9f.jpg'
         },
         project2: {
-            title: 'Aplicación de Fitness',
-            description: 'Aplicación móvil para seguimiento de entrenamientos, nutrición y progreso físico con planes personalizados y análisis de datos.',
+            titleKey: 'project2-title',
+            descriptionKey: 'project2-description',
             technologies: ['Ionic', 'Angular', 'Firebase', 'Chart.js', 'HealthKit API'],
-            features: [
-                'Seguimiento de entrenamientos diarios',
-                'Planes de nutrición personalizados',
-                'Análisis de progreso con gráficos',
-                'Integración con dispositivos wearables',
-                'Comunidad y desafíos entre usuarios',
-                'Modo offline para entrenar sin conexión'
+            featureKeys: [
+                'project2-feature1',
+                'project2-feature2',
+                'project2-feature3',
+                'project2-feature4',
+                'project2-feature5',
+                'project2-feature6'
             ],
-            duration: '1 año',
-            role: 'Desarrollador Mobile',
+            durationKey: 'project2-duration',
+            roleKey: 'project2-role',
             image: './img/fitness/343c3b87d2d4725fd5f64e385543af6a.jpg'
         },
         project3: {
-            title: 'Sistema de Gestión de APIs',
-            description: 'Plataforma para gestionar, monitorizar y documentar APIs RESTful con análisis de rendimiento y seguridad.',
+            titleKey: 'project3-title',
+            descriptionKey: 'project3-description',
             technologies: ['Laravel', 'PostgreSQL', 'Redis', 'Docker', 'Swagger'],
-            features: [
-                'Dashboard de monitorización en tiempo real',
-                'Documentación automática de APIs',
-                'Sistema de autenticación y autorización',
-                'Análisis de rendimiento y cuellos de botella',
-                'Gestión de versiones de API',
-                'Alertas y notificaciones configurables'
+            featureKeys: [ 
+                'project3-feature1',
+                'project3-feature2',
+                'project3-feature3',
+                'project3-feature4',
+                'project3-feature5',
+                'project3-feature6'
             ],
-            duration: '9 meses',
-            role: 'Desarrollador Backend',
+            durationKey: 'project3-duration',
+            roleKey: 'project3-role',
             image: './img/sistema_de _gestión_de_apis/151d436c4b325d3a82585487bd81ee16.jpg'
         },
         project4: {
-            title: 'Plataforma Inmobiliaria',
-            description: 'Portal web para búsqueda, listado y gestión de propiedades inmobiliarias con integración de mapas y filtros avanzados.',
+            titleKey: 'project4-title',
+            descriptionKey: 'project4-description',
             technologies: ['Vue.js', 'TailwindCSS', 'Node.js', 'MongoDB', 'Google Maps API'],
-            features: [
-                'Búsqueda avanzada con filtros personalizables',
-                'Integración de mapas interactivos',
-                'Sistema de favoritos y alertas',
-                'Calculadora de hipotecas',
-                'Panel para agentes inmobiliarios',
-                'Tours virtuales de propiedades'
+            featureKeys: [ 
+                'project4-feature1',
+                'project4-feature2',
+                'project4-feature3',
+                'project4-feature4',
+                'project4-feature5',
+                'project4-feature6'
             ],
-            duration: '3 meses',
-            role: 'Desarrollador Frontend',
+            durationKey: 'project4-duration', 
+            roleKey: 'project4-role',
             image: './img/plataforma_inmobiliaria/c7a03a62f65b50a004d701aea68ccd3a.jpg'
         },
         project5: {
-            title: 'App de Entrega de Comida',
-            description: 'Aplicación móvil para pedidos y entregas de comida a domicilio con seguimiento en tiempo real y sistema de pagos integrado.',
+            titleKey: 'project5-title', 
+            descriptionKey: 'project5-description', 
             technologies: ['Ionic', 'Vue.js', 'Firebase', 'Google Maps API', 'Stripe'],
-            features: [
-                'Catálogo de restaurantes con menús personalizables',
-                'Sistema de pedidos y carrito',
-                'Seguimiento de entrega en tiempo real',
-                'Múltiples métodos de pago',
-                'Sistema de reseñas y valoraciones',
-                'Programa de fidelización con puntos'
+            featureKeys: [ 
+                'project5-feature1',
+                'project5-feature2',
+                'project5-feature3',
+                'project5-feature4',
+                'project5-feature5',
+                'project5-feature6'
             ],
-            duration: '8 meses',
-            role: 'Desarrollador Full Stack',
+            durationKey: 'project5-duration', 
+            roleKey: 'project5-role', 
             image: './img/entrega_comidas_rapidas/64806e6311878e662d2ff925c833edca.jpg'
         },
         project6: {
-            title: 'Sistema de Gestión de Contenidos',
-            description: 'CMS personalizado para la gestión de contenidos digitales con editor visual, gestión de medios y análisis de audiencia.',
+            titleKey: 'project6-title', 
+            descriptionKey: 'project6-description', 
             technologies: ['Laravel', 'MySQL', 'Bootstrap', 'jQuery', 'AWS S3'],
-            features: [
-                'Editor de contenido visual WYSIWYG',
-                'Gestión de usuarios y permisos',
-                'Biblioteca de medios con optimización automática',
-                'Programación y publicación automática',
-                'SEO integrado y análisis de contenido',
-                'Multilenguaje y localización'
+            featureKeys: [ 
+                'project6-feature1',
+                'project6-feature2',
+                'project6-feature3',
+                'project6-feature4',
+                'project6-feature5',
+                'project6-feature6'
             ],
-            duration: '5 meses',
-            role: 'Desarrollador Backend',
+            durationKey: 'project6-duration', 
+            roleKey: 'project6-role', 
             image: './img/sistema_de_gestión_de_contenidos/609a63cc2250e69e1a9067c27c6e27d8.jpg'
         },
         project7: {
-            title: 'Plataforma LMS',
-            description: 'Sistema de gestión de aprendizaje para cursos online con videoconferencias, evaluaciones y certificaciones.',
-            technologies: ['Node', 'Vue', 'PosgreSql', 'AWS S3'],
-            features: [
-                'Editor multimedia',
-                'Gestión de usuarios y permisos',
-                'Integraciones Api',
-                'Programación y publicación automática',
-                'SEO integrado y análisis de contenido',
-                'Multilenguaje y localización'
+            titleKey: 'project7-title', 
+            descriptionKey: 'project7-description', 
+            technologies: ['Node', 'Vue', 'PostgreSQL', 'AWS S3'],
+            featureKeys: [ 
+                'project7-feature1',
+                'project7-feature2',
+                'project7-feature3',
+                'project7-feature4',
+                'project7-feature5',
+                'project7-feature6'
             ],
-            duration: '1 año y 4 meses',
-            role: 'Desarrollador Full Stack',
+            durationKey: 'project7-duration', 
+            roleKey: 'project7-role', 
             image: './img/plataforma_lms/0d6bf3baf2d4bc9e39a2756dff8341f5.jpg'
         }
     };
-    
+
+    // Función auxiliar para obtener traducciones
+    function getTranslation(key, lang = document.documentElement.lang || 'es') {
+        const translation = translations[key]?.[lang];
+        return translation !== undefined ? translation : `[${key}]`;
+    }
+
+    // Función auxiliar para obtener traducciones
     projectDetailsBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const projectId = btn.getAttribute('data-project');
             const project = projectDetails[projectId];
+            const currentLang = document.documentElement.lang || 'es';
             
             if (project) {
                 modalTitle.textContent = project.title;
                 
-                let content = `
+                const modalHTML = `
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
-                            <img src="${project.image}" alt="${project.title}" class="w-full h-auto rounded-lg">
+                            <img src="${project.image}" alt="${getTranslation(project.titleKey)}" class="w-full h-auto rounded-lg">
                         </div>
                         
                         <div>
-                            <h4 class="text-xl font-bold mb-4">Descripción</h4>
-                            <p class="text-gray-700 dark:text-gray-300 mb-6">${project.description}</p>
+                            <h4 class="text-xl font-bold mb-4">${getTranslation('modal-description')}</h4>
+                            <p class="text-gray-700 dark:text-gray-300 mb-6">${getTranslation(project.descriptionKey)}</p>
                             
                             <div class="mb-6">
-                                <h4 class="text-xl font-bold mb-4">Tecnologías</h4>
+                                <h4 class="text-xl font-bold mb-4">${getTranslation('modal-technologies')}</h4>
                                 <div class="flex flex-wrap gap-2">
                                     ${project.technologies.map(tech => `<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-medium">${tech}</span>`).join('')}
                                 </div>
                             </div>
                             
                             <div class="mb-6">
-                                <h4 class="text-xl font-bold mb-4">Características</h4>
+                                <h4 class="text-xl font-bold mb-4">${getTranslation('modal-features')}</h4>
                                 <ul class="space-y-2">
-                                    ${project.features.map(feature => `<li class="flex items-start"><i class="ri-check-line text-primary mr-2 mt-1"></i> ${feature}</li>`).join('')}
+                                 ${project.featureKeys.map(featureKey => {
+                                    const featureText = translations[featureKey][currentLang];
+                                    return `<li class="flex items-start">
+                                                <i class="ri-check-line text-primary mr-2 mt-1"></i> 
+                                                ${featureText}
+                                            </li>`;
+                                }).join('')}
                                 </ul>
                             </div>
                             
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <h5 class="font-medium mb-1">Duración</h5>
-                                    <p class="text-gray-700 dark:text-gray-300">${project.duration}</p>
+                                    <h5 class="font-medium mb-1">${getTranslation('modal-duration')}</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">${getTranslation(project.durationKey)}</p>
                                 </div>
                                 <div>
-                                    <h5 class="font-medium mb-1">Rol</h5>
-                                    <p class="text-gray-700 dark:text-gray-300">${project.role}</p>
+                                    <h5 class="font-medium mb-1">${getTranslation('modal-role')}</h5>
+                                    <p class="text-gray-700 dark:text-gray-300">${getTranslation(project.roleKey)}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `;
                 
-                modalContent.innerHTML = content;
-                modal.classList.add('visible');
+                document.getElementById('modal-title').textContent = getTranslation(project.titleKey);
+                document.getElementById('modal-content').innerHTML = modalHTML;
+                document.getElementById('project-modal').classList.add('visible');
                 document.body.style.overflow = 'hidden';
             }
         });
@@ -389,18 +404,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
-        submitButton.textContent = 'Enviando...';
+        submitButton.textContent = getTranslation('sending');
         submitButton.disabled = true;
         
         setTimeout(() => {
+            // Mostrar mensaje de éxito con traducciones
+            const successTitle = getTranslation('message-sent');
+            const successMessage = getTranslation('thank-you-message');
+
             // Show success message
             contactForm.innerHTML = `
                 <div class="text-center py-8">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="ri-check-line text-green-600 ri-2x"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">¡Mensaje Enviado!</h4>
-                    <p class="text-gray-700">Gracias por contactarme. Te responderé lo antes posible.</p>
+                    <h4 class="text-xl font-bold mb-2">${successTitle}</h4>
+                    <p class="text-gray-700">${successMessage}</p>
                 </div>
             `;
         }, 1500);
@@ -408,12 +427,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load more projects button
     const loadMoreBtn = document.getElementById('load-more-btn');
-    
+
     loadMoreBtn.addEventListener('click', () => {
-        loadMoreBtn.textContent = 'Cargando...';
+        // Cambiar el texto del botón a "Cargando..." según el idioma actual
+        loadMoreBtn.textContent = getTranslation('loading');
         
         setTimeout(() => {
-            loadMoreBtn.textContent = 'No hay más proyectos';
+            // Cambiar el texto del botón a "No hay más proyectos" según el idioma actual
+            loadMoreBtn.textContent = getTranslation('no-more-projects');
             loadMoreBtn.disabled = true;
         }, 1500);
     });

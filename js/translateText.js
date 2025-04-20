@@ -4,6 +4,7 @@ const mobileLanguageToggleButton = document.querySelector('[data-mobile-language
 const elementsToTranslate = document.querySelectorAll('[data-translate]');
 
 // Objeto con las traducciones
+// Objeto con las traducciones
 const translations = {
   'nav-home': {
     'es': 'Inicio',
@@ -325,7 +326,339 @@ const translations = {
     'modal-close': {
       'es': 'Cerrar',
       'en': 'Close'
-    }
+    },
+    // Proyecto 1 - E-commerce
+    // Textos genéricos del modal
+  'modal-description': {
+    'es': 'Descripción',
+    'en': 'Description'
+  },
+  'modal-technologies': {
+    'es': 'Tecnologías',
+    'en': 'Technologies'
+  },
+  'modal-features': {
+    'es': 'Características',
+    'en': 'Features'
+  },
+  'modal-duration': {
+    'es': 'Duración',
+    'en': 'Duration'
+  },
+  'modal-role': {
+    'es': 'Rol',
+    'en': 'Role'
+  },
+
+  // Proyecto 1 - E-commerce
+  'project1-title': {
+    'es': 'Plataforma E-commerce',
+    'en': 'E-commerce Platform'
+  },
+  'project1-description': {
+    'es': 'Una plataforma de comercio electrónico completa con gestión de productos, carrito de compras, pasarela de pagos y panel de administración.',
+    'en': 'A complete e-commerce platform with product management, shopping cart, payment gateway and admin panel.'
+  },
+  'project1-role': {
+    'es': 'Desarrollador Full Stack',
+    'en': 'Full Stack Developer'
+  },
+  'project1-feature1': {
+    'es': 'Catálogo de productos con filtros avanzados',
+    'en': 'Product catalog with advanced filters'
+  },
+  'project1-feature2': {
+    'es': 'Sistema de búsqueda en tiempo real',
+    'en': 'Real-time search system'
+  },
+  'project1-feature3': {
+    'es': 'Carrito de compras con persistencia',
+    'en': 'Persistent shopping cart'
+  },
+  'project1-feature4': {
+    'es': 'Pasarela de pagos segura',
+    'en': 'Secure payment gateway'
+  },
+  'project1-feature5': {
+    'es': 'Panel de administración para gestión de productos e inventario',
+    'en': 'Admin panel for product and inventory management'
+  },
+  'project1-feature6': {
+    'es': 'Sistema de reseñas y valoraciones',
+    'en': 'Review and rating system'
+  },
+  'project1-duration': {
+    'es': '8 meses',
+    'en': '8 months'
+  },
+  // Proyecto 2 - Fitness App
+  'project2-title': {
+    'es': 'Aplicación de Fitness',
+    'en': 'Fitness App'
+  },
+  'project2-description': {
+    'es': 'Aplicación móvil para seguimiento de entrenamientos, nutrición y progreso físico con planes personalizados y análisis de datos.',
+    'en': 'Mobile app for workout tracking, nutrition and physical progress with personalized plans and data analysis.'
+  },
+  'project2-role': {
+    'es': 'Desarrollador Mobile',
+    'en': 'Mobile Developer'
+  },
+  'project2-feature1': {
+    'es': 'Seguimiento de entrenamientos diarios',
+    'en': 'Daily workout tracking'
+  },
+  'project2-feature2': {
+    'es': 'Planes de nutrición personalizados',
+    'en': 'Personalized nutrition plans'
+  },
+  'project2-feature3': {
+    'es': 'Análisis de progreso con gráficos',
+    'en': 'Progress analysis with charts'
+  },
+  'project2-feature4': {
+    'es': 'Integración con dispositivos wearables',
+    'en': 'Integration with wearable devices'
+  },
+  'project2-feature5': {
+    'es': 'Comunidad y desafíos entre usuarios',
+    'en': 'Community and challenges between users'
+  },
+  'project2-feature6': {
+    'es': 'Modo offline para entrenar sin conexión',
+    'en': 'Offline mode for training without connection'
+  },
+  'project2-duration': {
+    'es': '1 año',
+    'en': '1 year'
+  },
+  // Proyecto 3 - Sistema de Gestión de APIs
+  'project3-title': {
+    'es': 'Sistema de Gestión de APIs',
+    'en': 'API Management System'
+  },
+  'project3-description': {
+    'es': 'Plataforma para gestionar, monitorizar y documentar APIs RESTful con análisis de rendimiento y seguridad.',
+    'en': 'Platform to manage, monitor and document RESTful APIs with performance and security analysis.'
+  },
+  'project3-feature1': {
+    'es': 'Dashboard de monitorización en tiempo real',
+    'en': 'Real-time monitoring dashboard'
+  },
+  'project3-feature2': {
+    'es': 'Documentación automática de APIs',
+    'en': 'Automatic API documentation'
+  },
+  'project3-feature3': {
+    'es': 'Sistema de autenticación y autorización',
+    'en': 'Authentication and authorization system'
+  },
+  'project3-feature4': {
+    'es': 'Análisis de rendimiento y cuellos de botella',
+    'en': 'Performance analysis and bottleneck detection'
+  },
+  'project3-feature5': {
+    'es': 'Gestión de versiones de API',
+    'en': 'API version management'
+  },
+  'project3-feature6': {
+    'es': 'Alertas y notificaciones configurables',
+    'en': 'Configurable alerts and notifications'
+  },
+  'project3-duration': {
+    'es': '9 meses',
+    'en': '9 months'
+  },
+  'project3-role': {
+    'es': 'Desarrollador Backend',
+    'en': 'Backend Developer'
+  },
+  // Proyecto 4 - Plataforma Inmobiliaria
+  'project4-title': {
+    'es': 'Plataforma Inmobiliaria',
+    'en': 'Real Estate Platform'
+  },
+  'project4-description': {
+    'es': 'Portal web para búsqueda, listado y gestión de propiedades inmobiliarias con integración de mapas y filtros avanzados.',
+    'en': 'Web portal for searching, listing, and managing real estate properties with map integration and advanced filters.'
+  },
+  'project4-feature1': {
+    'es': 'Búsqueda avanzada con filtros personalizables',
+    'en': 'Advanced search with customizable filters'
+  },
+  'project4-feature2': {
+    'es': 'Integración de mapas interactivos',
+    'en': 'Interactive map integration'
+  },
+  'project4-feature3': {
+    'es': 'Sistema de favoritos y alertas',
+    'en': 'Favorites and alerts system'
+  },
+  'project4-feature4': {
+    'es': 'Calculadora de hipotecas',
+    'en': 'Mortgage calculator'
+  },
+  'project4-feature5': {
+    'es': 'Panel para agentes inmobiliarios',
+    'en': 'Panel for real estate agents'
+  },
+  'project4-feature6': {
+    'es': 'Tours virtuales de propiedades',
+    'en': 'Virtual property tours'
+  },
+  'project4-duration': {
+    'es': '2 años',
+    'en': '2 year'
+  },
+  'project4-role': {
+    'es': 'Desarrollador Frontend',
+    'en': 'Frontend Developer'
+  },
+  // Proyecto 5 - App de Entrega de Comida
+  'project5-title': {
+    'es': 'App de Entrega de Comida',
+    'en': 'Food Delivery App'
+  },
+  'project5-description': {
+    'es': 'Aplicación móvil para pedidos y entregas de comida a domicilio con seguimiento en tiempo real y sistema de pagos integrado.',
+    'en': 'Mobile app for food ordering and delivery with real-time tracking and integrated payment system.'
+  },
+  'project5-feature1': {
+    'es': 'Catálogo de restaurantes con menús personalizables',
+    'en': 'Restaurant catalog with customizable menus'
+  },
+  'project5-feature2': {
+    'es': 'Sistema de pedidos y carrito',
+    'en': 'Ordering and cart system'
+  },
+  'project5-feature3': {
+    'es': 'Seguimiento de entrega en tiempo real',
+    'en': 'Real-time delivery tracking'
+  },
+  'project5-feature4': {
+    'es': 'Múltiples métodos de pago',
+    'en': 'Multiple payment methods'
+  },
+  'project5-feature5': {
+    'es': 'Sistema de reseñas y valoraciones',
+    'en': 'Review and rating system'
+  },
+  'project5-feature6': {
+    'es': 'Programa de fidelización con puntos',
+    'en': 'Loyalty program with points'
+  },
+  'project5-duration': {
+    'es': '8 meses',
+    'en': '8 months'
+  },
+  'project5-role': {
+    'es': 'Desarrollador Full Stack',
+    'en': 'Full Stack Developer'
+  },
+  // Proyecto 6 - Sistema de Gestión de Contenidos
+  'project6-title': {
+    'es': 'Sistema de Gestión de Contenidos',
+    'en': 'Content Management System'
+  },
+  'project6-description': {
+    'es': 'CMS personalizado para la gestión de contenidos digitales con editor visual, gestión de medios y análisis de audiencia.',
+    'en': 'Custom CMS for managing digital content with a visual editor, media management, and audience analytics.'
+  },
+  'project6-feature1': {
+    'es': 'Editor de contenido visual WYSIWYG',
+    'en': 'WYSIWYG visual content editor'
+  },
+  'project6-feature2': {
+    'es': 'Gestión de usuarios y permisos',
+    'en': 'User and permission management'
+  },
+  'project6-feature3': {
+    'es': 'Biblioteca de medios con optimización automática',
+    'en': 'Media library with automatic optimization'
+  },
+  'project6-feature4': {
+    'es': 'Programación y publicación automática',
+    'en': 'Scheduling and automatic publishing'
+  },
+  'project6-feature5': {
+    'es': 'SEO integrado y análisis de contenido',
+    'en': 'Integrated SEO and content analysis'
+  },
+  'project6-feature6': {
+    'es': 'Multilenguaje y localización',
+    'en': 'Multilingual support and localization'
+  },
+  'project6-duration': {
+    'es': '1 año',
+    'en': '1 year'
+  },
+  'project6-role': {
+    'es': 'Desarrollador Backend',
+    'en': 'Backend Developer'
+  },
+  // Proyecto 7 - Plataforma LMS
+  'project7-title': {
+    'es': 'Plataforma LMS',
+    'en': 'LMS Platform'
+  },
+  'project7-description': {
+    'es': 'Sistema de gestión de aprendizaje para cursos online con videoconferencias, evaluaciones y certificaciones.',
+    'en': 'Learning management system for online courses with video conferencing, assessments, and certifications.'
+  },
+  'project7-feature1': {
+    'es': 'Editor multimedia',
+    'en': 'Multimedia editor'
+  },
+  'project7-feature2': {
+    'es': 'Gestión de usuarios y permisos',
+    'en': 'User and permission management'
+  },
+  'project7-feature3': {
+    'es': 'Integraciones Api',
+    'en': 'API integrations'
+  },
+  'project7-feature4': {
+    'es': 'Programación y publicación automática',
+    'en': 'Scheduling and automatic publishing'
+  },
+  'project7-feature5': {
+    'es': 'SEO integrado y análisis de contenido',
+    'en': 'Integrated SEO and content analysis'
+  },
+  'project7-feature6': {
+    'es': 'Multilenguaje y localización',
+    'en': 'Multilingual support and localization'
+  },
+  'project7-duration': {
+    'es': '1 año y 4 meses',
+    'en': '1 year and 4 months'
+  },
+  'project7-role': {
+    'es': 'Desarrollador Full Stack',
+    'en': 'Full Stack Developer'
+  },
+  // Formulario de contacto
+  'sending': {
+    'es': 'Enviando...',
+    'en': 'Sending...'
+  },
+  'message-sent': {
+    'es': '¡Mensaje Enviado!',
+    'en': 'Message Sent!'
+  },
+  'thank-you-message': {
+    'es': 'Gracias por contactarme. Te responderé lo antes posible.',
+    'en': 'Thank you for contacting me. I will respond as soon as possible.'
+  },
+  // Botón "Cargar más"
+  'loading': {
+    'es': 'Cargando...',
+    'en': 'Loading...'
+  },
+  'no-more-projects': {
+    'es': 'No hay más proyectos',
+    'en': 'No more projects'
+  }
 };
 
 // Función para cambiar el idioma
