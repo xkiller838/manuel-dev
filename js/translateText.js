@@ -681,6 +681,9 @@ function toggleLanguage() {
       element.textContent = translations[key][newLang];
     }
   });
+
+  // Llamar a updateTranslatedElements() para actualizar placeholders y otros textos
+  updateTranslatedElements();
   
   // Guardar preferencia en localStorage
   localStorage.setItem('language', newLang);
@@ -728,6 +731,43 @@ function initializeLanguage() {
     }
   });
 }
+
+// Función auxiliar para obtener traducciones
+function getTranslation(key) {
+  const lang = document.documentElement.lang || 'es';
+  return translations[key]?.[lang] || `[${key}]`;
+}
+
+// Función para actualizar elementos con data-translate
+function updateTranslatedElements() {
+  const lang = document.documentElement.lang || 'es';
+
+  // Actualizar todos los elementos con data-translate
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    const translation = getTranslation(key);
+
+    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+      // Para inputs y textareas, actualiza el placeholder
+      element.placeholder = translation;
+    } else {
+      // Para otros elementos (como labels y botones), actualiza el texto
+      element.textContent = translation;
+    }
+  });
+}
+
+// Inicializar traducciones al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  initializeLanguage(); // Asegúrate de que esta función ya esté definida
+  updateTranslatedElements();
+});
+
+// Actualizar traducciones cuando cambia el idioma
+document.addEventListener('languageChanged', () => {
+  updateTranslatedElements();
+});
+
 
 // Inicializar idioma cuando se carga la página
 document.addEventListener('DOMContentLoaded', initializeLanguage);
